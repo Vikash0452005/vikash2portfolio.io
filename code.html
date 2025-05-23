@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vikash's Book Shop</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    :root {
+      --secondary-color: #3498db;
+      --text-color: #333;
+      --transition: 0.3s ease-in-out;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f5f5f5;
+      color: var(--text-color);
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+      padding: 2rem 0;
+    }
+
+    /* Profile header */
+    .profile-header {
+      text-align: center;
+      padding: 2rem 0;
+      background-color: white;
+      border-bottom: 1px solid #ddd;
+    }
+    .profile-header img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .profile-header h1 {
+      margin-top: 1rem;
+      font-size: 2rem;
+      color: var(--secondary-color);
+    }
+
+    /* Shop section */
+    .shop-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+    .product-card {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      width: 250px;
+      text-align: center;
+      padding: 1rem;
+      transition: var(--transition);
+    }
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+    .product-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+    .product-card h3 {
+      margin: 0.75rem 0;
+      font-size: 1.25rem;
+    }
+    .product-card p {
+      font-size: 1.1rem;
+      color: #555;
+      margin-bottom: 0.75rem;
+    }
+    .product-card button {
+      background-color: var(--secondary-color);
+      color: white;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .product-card button:hover {
+      background-color: #2980b9;
+    }
+
+    footer {
+      background-color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+      border-top: 1px solid #ddd;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Profile Header -->
+  <div class="profile-header">
+    <img src="vikash.jpg" alt="Vikash's Profile Picture" />
+    <h1>Vikash's Book Shop</h1>
+  </div>
+
+  <!-- Book Shop Section -->
+  <section id="shop" class="container">
+    <h2>Available Books</h2>
+    <div class="shop-section">
+      <!-- Book 1 -->
+      <div class="product-card">
+        <img src="https://picsum.photos/200/300?random=11" alt="The Great Gatsby" />
+        <h3>The Great Gatsby</h3>
+        <p>$10.99</p>
+        <button onclick="addToCart('The Great Gatsby', 10.99)">Add to Cart</button>
+      </div>
+      <!-- Book 2 -->
+      <div class="product-card">
+        <img src="https://picsum.photos/200/300?random=12" alt="1984 by George Orwell" />
+        <h3>1984 by George Orwell</h3>
+        <p>$8.49</p>
+        <button onclick="addToCart('1984 by George Orwell', 8.49)">Add to Cart</button>
+      </div>
+      <!-- Book 3 -->
+      <div class="product-card">
+        <img src="https://picsum.photos/200/300?random=13" alt="To Kill a Mockingbird" />
+        <h3>To Kill a Mockingbird</h3>
+        <p>$9.79</p>
+        <button onclick="addToCart('To Kill a Mockingbird', 9.79)">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Vikash | Building a better bookstore</p>
+  </footer>
+
+  <script>
+    let cart = [];
+
+    function addToCart(name, price) {
+      cart.push({ name, price });
+      alert(`Added "${name}" to your cart.`);
+    }
+  </script>
+
+</body>
+</html>
